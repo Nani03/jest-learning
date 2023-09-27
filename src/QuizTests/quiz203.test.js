@@ -30,4 +30,15 @@ describe("checkbox conditions", () => {
         fireEvent.click(checkBox);
         expect(checkBox).toBeChecked();
       });
+      test("should enabled on click", () => {
+        render(<QuiLl203 />);
+        const buttonElement = screen.getByRole("button", {
+          name: "Change to blue",
+        })
+        const checkBox = screen.getByRole("checkbox");
+        fireEvent.click(checkBox);
+        expect(checkBox).toBeChecked();
+        expect(buttonElement).toBeDisabled();
+        expect(buttonElement).toHaveStyle({ "background-color": "gray" });
+      });
   });
