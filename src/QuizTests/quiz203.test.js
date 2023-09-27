@@ -22,4 +22,12 @@ describe("checkbox conditions", () => {
         fireEvent.click(checkBox);
         expect(checkBox).not.toBeChecked();
       });
+      test("should enabled on 3 click", () => {
+        render(<QuiLl203 />);
+        const checkBox = screen.getByRole("checkbox");
+        fireEvent.click(checkBox);
+        fireEvent.click(checkBox);
+        fireEvent.click(checkBox);
+        expect(checkBox).toBeChecked();
+      });
   });
