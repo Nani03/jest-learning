@@ -1,6 +1,7 @@
 import { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import SummaryForm from "./pages/SummaryForm";
 
 function App() {
   const [buttonColor, setButtonColor] = useState("red");
@@ -15,6 +16,8 @@ function App() {
         Change to {newButtonColor}
       </button>
       <input type="checkbox" />
+
+      <SummaryForm />
     </div>
   );
 }
